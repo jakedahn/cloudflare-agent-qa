@@ -35,7 +35,7 @@ for i in sorted(bad_docs, reverse=True):
     del docs[i]
     del metadatas[i]
 
-import ipdb;ipdb.set_trace()
+
 # Here we create a vector store from the documents and save it to disk.
 store = FAISS.from_texts(docs, OpenAIEmbeddings(), metadatas=metadatas)
 faiss.write_index(store.index, "docs.index")
