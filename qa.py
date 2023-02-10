@@ -3,7 +3,7 @@ import pickle
 
 import faiss
 
-from langchain import OpenAI
+from promptlayer.langchain.llms import OpenAI
 from langchain.chains import VectorDBQAWithSourcesChain
 
 
@@ -26,6 +26,7 @@ chain = VectorDBQAWithSourcesChain.from_llm(
         max_tokens=1500,
         model_name="text-davinci-003",
         max_retries=3,
+        pl_tags=["cloudflare-qa-agent"],
     ),
     vectorstore=store,
 )
