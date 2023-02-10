@@ -1,8 +1,11 @@
+import argparse
+import pickle
+
 import faiss
+
 from langchain import OpenAI
 from langchain.chains import VectorDBQAWithSourcesChain
-import pickle
-import argparse
+
 
 parser = argparse.ArgumentParser(description='Ask a question to the cloudflare docs.')
 parser.add_argument('question', type=str, help='The question to ask the cloudflare docs')
