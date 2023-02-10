@@ -21,7 +21,12 @@ with open("cloudflare_docs.pkl", "rb") as f:
 
 store.index = index
 chain = VectorDBQAWithSourcesChain.from_llm(
-    llm=OpenAI(temperature=0, max_tokens=1500, model_name="text-davinci-003"),
+    llm=OpenAI(
+        temperature=0,
+        max_tokens=1500,
+        model_name="text-davinci-003",
+        max_retries=3,
+    ),
     vectorstore=store,
 )
 result = chain({"question": args.question})

@@ -9,6 +9,7 @@ openai = "*"
 faiss-cpu = "*"
 tiktoken = "*"
 ipdb = "*"
+promptlayer = "*"
 
 [dev-packages]
 
